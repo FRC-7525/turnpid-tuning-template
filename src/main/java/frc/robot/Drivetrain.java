@@ -1,3 +1,4 @@
+
 package frc.robot;
 
 import edu.wpi.first.math.geometry.Pose2d;
@@ -5,6 +6,7 @@ import edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim;
 import edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotGearing;
 import edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotMotor;
 import edu.wpi.first.wpilibj.simulation.DifferentialDrivetrainSim.KitbotWheelSize;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Drivetrain {
     private DifferentialDrivetrainSim driveSim = DifferentialDrivetrainSim.createKitbotSim(
@@ -23,9 +25,11 @@ public class Drivetrain {
         // In this periodic function, you
         // need to get your robot to turn to whatever
         // angle the setpoint variable gives.
+        // This is where you should edit!
         driveSim.setInputs(-4, 4);
 
         // Do not edit -- for simulation!
+        SmartDashboard.putNumber("Heading", getCurrentAngle());
         driveSim.update(0.02);
     }
 
